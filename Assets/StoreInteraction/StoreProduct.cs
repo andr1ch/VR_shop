@@ -7,10 +7,13 @@ public sealed class StoreProduct : MonoBehaviour
     public StoreGrabbable Grab { get; private set; }
     public Rigidbody Body { get; private set; }
     public Collider[] Colliders { get; private set; }
+    public bool IsPaid { get; private set; }
     private Transform shelfParent;
     private RigidbodyInterpolation freeInterpolation;
     private Vector3 storedPosition;
     private Quaternion storedRotation;
+
+    public void MarkPaid() => IsPaid = true;
 
     private void Awake()
     {

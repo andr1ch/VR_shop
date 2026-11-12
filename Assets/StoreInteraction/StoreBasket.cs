@@ -11,12 +11,35 @@ public sealed class StoreBasket : MonoBehaviour
     private readonly HashSet<StoreProduct> candidates = new HashSet<StoreProduct>();
     private readonly List<StoreProduct> candidateBuffer = new List<StoreProduct>();
     private Collider[] basketColliders;
+    private StoreGrabbable grab;
     private const float Gap = .004f;
     private const float Epsilon = .0001f;
     public Transform Contents => contents;
     public int Count => products.Count;
+    public bool IsHeld => grab != null && grab.isSelected;
+    public int UnpaidCount
+    {
+        get
+        {
+            int count = 0;
+            foreach (var product in products)
+                if (product != null && !product.IsPaid) count++;
+            return count;
+        }
+    }
 
-    private void Awake() => basketColliders = GetComponentsInChildren<Collider>();
+    private void Awake()
+    {
+        basketColliders = GetComponentsInChildren<Collider>();
+        grab = GetComponent<StoreGrabbable>();
+    }
+
+    public void CopyUnpaidProducts(List<StoreProduct> destination)
+    {
+        destination.Clear();
+        foreach (var product in products)
+            if (product != null && !product.IsPaid) destination.Add(product);
+    }
 
     public void Track(Collider other)
     {
