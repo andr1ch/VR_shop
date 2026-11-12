@@ -1,0 +1,34 @@
+{
+  "count": 3,
+  "allStored": true,
+  "firstDrift": 1.68985753E-06,
+  "movingAndTiltingStable": true,
+  "noProductOverlap": true,
+  "removalAndReinsertion": true,
+  "report": [
+    {
+      "item": "Cube.141",
+      "count": 1,
+      "stored": true,
+      "local": "(-0.0201, 0.1272, -0.1760)",
+      "first": "(-0.0201, 0.1272, -0.1760)",
+      "firstKinematic": true
+    },
+    {
+      "item": "Cube.142",
+      "count": 2,
+      "stored": true,
+      "local": "(-0.0201, 0.1272, -0.0137)",
+      "first": "(-0.0201, 0.1272, -0.1760)",
+      "firstKinematic": true
+    },
+    {
+      "item": "Cube.143",
+      "count": 3,
+      "stored": true,
+      "local": "(-0.0201, 0.1272, 0.1485)",
+      "first": "(-0.0201, 0.1272, -0.1760)",
+      "firstKinematic": true
+    }
+  ]
+}
